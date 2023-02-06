@@ -1,10 +1,11 @@
+import Board from "./components/Board";
 
 
 function App() {
   return (
     <div className="game">
       <div className="game-board">
-        게임보드
+        <Board />
       </div>
       <div className="game-info">
 
