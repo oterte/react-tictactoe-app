@@ -11,8 +11,20 @@ export default class Board extends Component {
         }
     }
     
+    // 기존 state를 바꾸지 않고, 새로운 배열을 만들어서 보냄(불변성 유지)
+
+    handleClick (i){
+        const squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({squares: squares})
+    }
+
+
     renderSquare(i) {
-        return <Square value={this.state.squares[i]} />
+        // 자녀 컴포넌트에 데이터 내려주기
+        return <Square 
+                value={this.state.squares[i]} 
+                onClick={() => this.handleClick(i)}/>
     }
     // props를 통해 컴포넌트 간 데이터 전달하기
     // 1. props는 properties의 줄임말

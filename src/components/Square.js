@@ -24,17 +24,16 @@ export default class Square extends React.Component {
         // 여러개의 자식으로부터 데이터를 모으거나 두개의 자식 컴포넌트들이 서로 통신하게 하려면 부모 컴포넌트에 공유 state를 정의해야 함.
         // 부모 컴포넌트는 props를 사용하여 자식 컴포넌트에 state를 다시 전달할 수 있음.
         // 이것은 자식 컴포넌트들이 서로 또는 부모 컴포넌트와 동기화하도록 만든다.
-
+    // this.props.props의 이름
 
 
     // 부모 컴포넌트에서 받은 데이터를 props를 통해 받아오기
-    // this.props.props의 이름
     render() {
         return (
             <button className="square"
-                onClick={() => { this.setState({ value: 'X' }) }}
+                onClick={() => { this.props.onClick() }}
             >
-                {this.state.value}
+                {this.props.value}
             </button>
         )
     }
