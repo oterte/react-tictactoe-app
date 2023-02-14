@@ -1,7 +1,7 @@
 import React from "react";
 import "./Square.css"
 
-export default class Square extends React.Component {
+const  Square = (props) => {
     // super 키워드는 자식 클래스 내에서 부모 클래스의 생성자를 호출할 때 사용된다.
         // 부모 클래스의 메소드를 호출할 때도 사용된다.
         // 생성자에서는 super 키워드 하나만 사용되거나, this가 사용되기 전에 호출되어야 한다.
@@ -28,13 +28,15 @@ export default class Square extends React.Component {
 
 
     // 부모 컴포넌트에서 받은 데이터를 props를 통해 받아오기
-    render() {
+    
         return (
             <button className="square"
-                onClick={() => { this.props.onClick() }}
+                onClick={() => {props.onClick() }}
             >
-                {this.props.value}
+                {props.value}
             </button>
         )
-    }
+    
 }
+
+export default Square;

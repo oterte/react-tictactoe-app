@@ -112,4 +112,13 @@ class 없이 state를 사용할 수 있는 새로운 기능
 1. Class component vs Functional Component<br>
 - 클래스형 컴포넌트는 더 많은 기능을 제공하지만, 코드가 길고 복잡하며 성능이 더디다
 - 함수형 컴포넌트는 제공하는 기능은 적지만, 짧고 심플한 코드이며 더 빠른 성능을 제공한다.
-![클래스vs함수](image.png)
+- 생명주기를 함수형 컴포넌트에선 사용하지 못했기 때문에 함수형 컴포넌트가 더 간결하고 빠르더라도 클래스형 컴포넌트를 사용해왔다.
+
+2. React Hook의 등장<br>
+- react hook을 이용해 함수형 컴포넌트에서도 생명주기를 사용할 수 있기에 데이터를 가져오고, 컴포넌트를 시작하자마자 api를 호출할 수 있게 되었다.
+- Hooks에서는 useEffect를 이용해서 comPonentDidMount, componentDidUpdate, componentWillUnmount를 처리한다.
+- state를 정의해줄 때, const [name,SetName] = userState("") 이런 식으로 해준다. 여기서 setName을 통해 state를 업데이트 시켜줄 수 있다.
+- HOC 컴포넌트를 Custom React Hooks로 대체해서 너무나 많은 Wrapper 컴포넌트를 줄이게 되는 것.
+
+### HOC 란?
+Higher Order Component의 약자로 컴포넌트를 인자로 받아서 새로운 리액트 컴포넌트를 리턴하는 함수
